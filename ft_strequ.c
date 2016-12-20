@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vboivin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 19:18:08 by vboivin           #+#    #+#             */
-/*   Updated: 2016/12/06 12:14:33 by vboivin          ###   ########.fr       */
+/*   Created: 2015/03/20 11:57:10 by wbeets            #+#    #+#             */
+/*   Updated: 2015/03/20 11:57:10 by wbeets           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+int		ft_strequ(char const *s1, char const *s2)
 {
-	int i;
+	int		i;
 
-	i = 0;
-	if (!s || !f)
-		return ;
-	while (s[i])
+	if (s1 && s2)
 	{
-		f(i, &s[i]);
-		i++;
+		i = 0;
+		while (s1[i] != 0)
+		{
+			i++;
+			if (s1[i] != s2[i])
+				return (0);
+		}
+		return (1);
 	}
+	return (0);
 }

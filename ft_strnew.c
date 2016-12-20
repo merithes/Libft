@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vboivin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: wbeets <wbeets@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 19:18:08 by vboivin           #+#    #+#             */
-/*   Updated: 2016/12/06 12:14:25 by vboivin          ###   ########.fr       */
+/*   Created: 2015/03/20 11:57:20 by wbeets            #+#    #+#             */
+/*   Updated: 2015/03/20 11:57:20 by wbeets           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+char	*ft_strnew(size_t size)
 {
-	int i;
+	char	*newmem;
 
-	i = 0;
-	if (!f || !s)
-		return ;
-	while (s[i])
-		f(&s[i++]);
+	newmem = (char *)malloc(size + 1);
+	if (newmem == NULL)
+		return (NULL);
+	ft_bzero(newmem, size + 1);
+	return (newmem);
 }
