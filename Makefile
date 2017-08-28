@@ -6,7 +6,7 @@
 #    By: vboivin <marvin42.fr>                     +#+   +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/17 14:50:04 by vboivin           #+#    #+#              #
-#    Updated: 2017/08/28 18:15:11 by vboivin          ###   ########.fr        #
+#    Updated: 2017/08/28 19:27:39 by vboivin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ OBJPATH		= obj
 all: $(NAME)
 
 $(OBJPATH)/%.o: $(SRCPATH)/%.c
+	@mkdir -p obj
 	@printf "Compiling $<                                            \r"
 	@$(COMP) $(FLAGS) -c $< -o $@ $(INC)
 
